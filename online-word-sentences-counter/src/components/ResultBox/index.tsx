@@ -1,26 +1,40 @@
 import './index.scss'
 
-const ResultBox = () => {
+interface TextData {
+  words: number
+  characters: number
+  sentences: number
+  paragraphs: number
+  pronouns: number
+  longestWord: string
+  readingTime: string
+}
+
+interface ResultBoxProps {
+  data: TextData
+}
+
+const ResultBox = ({ data }: ResultBoxProps) => {
   const resultBar = [
     {
       title: 'Words',
-      value: 0,
+      value: data.words,
     },
     {
       title: 'Characters',
-      value: 0,
+      value: data.characters,
     },
     {
       title: 'Sentences',
-      value: 0,
+      value: data.sentences,
     },
     {
       title: 'Paragraphs ',
-      value: 0,
+      value: data.paragraphs,
     },
     {
       title: 'Pronouns',
-      value: 0,
+      value: data.pronouns,
     },
   ]
 
